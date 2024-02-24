@@ -1,0 +1,62 @@
+.dropdown {
+    position: relative;
+    display: block;
+
+
+    &-content {
+        position: absolute;
+        left: rem(-22);
+        display: none;
+        background: $white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        margin-top: rem(28);
+        padding: rem(20) rem(24);
+        width: 168px;
+
+        @include breakpointDown(mobile) {
+            position: static;
+            text-align: center;
+            margin: rem(25) auto;
+            width: 100%;
+            background-color: $mobileDropdown;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: rem(0);
+                background: $grayishBlue;
+                height: 2px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        a {
+            display: block;
+            color: $veryDarkBlue !important;
+            font-weight: 500 !important;
+            padding: 8px 0;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $veryDarkBlackBlue !important;
+                font-weight: 700 !important;
+            }
+        }
+    }
+
+    .show {
+        display: block;
+    }
+
+    .dropbtn {
+        img {
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+}

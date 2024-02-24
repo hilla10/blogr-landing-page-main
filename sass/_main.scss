@@ -1,0 +1,247 @@
+.main {
+    margin-top: rem(155);
+    text-align: center;
+
+    @include breakpointDown(mobile) {
+        margin-top: rem(70);
+    }
+
+    &__desktop {
+        margin-bottom: rem(255);
+
+        @include breakpointDown(tablet) {
+            margin-bottom: rem(80);
+        }
+    }
+
+    &__grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+
+        &-text {
+            padding-left: 8px;
+        }
+
+        @include breakpointDown(tablet) {
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            &-text {
+                order: 2;
+                margin-top: 78px;
+            }
+        }
+
+        &-content {
+            max-width: 77%;
+
+            @include breakpointDown(desktop) {
+                max-width: 100%;
+
+            }
+
+
+            p {
+                margin-bottom: 80px;
+            }
+        }
+
+        &-img {
+            position: absolute;
+            right: -24%;
+            background: url("../images/illustration-editor-desktop.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center -159px;
+            width: 938px;
+            height: 692px;
+
+            @include breakpointDown(desktop) {
+                background: url("../images/illustration-editor-mobile.svg");
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-size: 56%;
+                right: -28%;
+
+            }
+
+            @include breakpointDown(tablet) {
+                position: static;
+                height: 485px;
+                background-size: 100%;
+                order: 1;
+            }
+
+            @include breakpointDown(mobile) {
+                height: 295px;
+                background-size: 320px;
+            }
+        }
+
+        &--img {
+            position: absolute;
+            left: -332px;
+            background: url("../images/illustration-laptop-desktop.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center -78px;
+            width: 978px;
+            height: 672px;
+
+            @include breakpointDown(desktop) {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-size: 754px;
+                position: static;
+                left: 0;
+            }
+
+            @include breakpointDown(tablet) {
+                position: static;
+                height: 485px;
+                background-size: 100%;
+            }
+
+            @include breakpointDown(mobile) {
+                order: 1;
+                background: url('../images/illustration-laptop-mobile.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: $veryDarkGrayishBlue;
+        }
+
+        picture {
+            display: flex;
+
+            img {
+                width: 100%;
+                flex: 1 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__grid--text {
+        position: relative;
+        right: -685px;
+        top: 22px;
+
+        @include breakpointDown(desktop) {
+            position: static;
+            margin: 0 50px;
+        }
+
+        @include breakpointDown(tablet) {
+            order: 2;
+            margin: 0 20px;
+        }
+    }
+
+    &__content {
+        max-width: 93%;
+        margin-bottom: 82px;
+        padding-left: 116px;
+
+        @include breakpointDown(desktop) {
+            max-width: 90%;
+            padding-left: rem(50);
+        }
+
+        @include breakpointDown(tablet) {
+            max-width: 95%;
+            margin: rem(50) auto;
+            padding-left: 0;
+        }
+
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        gap: 60px;
+
+        @include breakpointDown(tablet) {
+            flex-direction: column;
+            gap: 0;
+            text-align: center;
+        }
+    }
+
+    &__blog {
+        background: url('../images/bg-pattern-circles.svg'), $blogGradient;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -415px -760px,
+            center;
+        height: 400px;
+        margin-top: 177px;
+        border-radius: 0 98px 0 98px;
+        margin-bottom: 282px;
+
+        @include breakpointDown(tablet) {
+            height: auto;
+            margin-top: rem(50);
+            margin-bottom: rem(80);
+            background-position: -143px -213px,
+                center;
+
+            &-text {
+                padding-bottom: rem(50);
+            }
+        }
+
+        p {
+            max-width: 80%;
+            line-height: 1.7;
+            color: $white;
+
+            @include breakpointDown(tablet) {
+                margin: auto;
+            }
+        }
+
+        img {
+            margin-left: 75px;
+            margin-top: -69px;
+
+            @include breakpointDown(desktop) {
+                margin-left: rem(20);
+            }
+
+            @include breakpointDown(mobile) {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            margin-bottom: 0;
+            margin-top: 115px;
+            color: $white;
+            letter-spacing: -.2px;
+            margin-bottom: 20px;
+
+            @include breakpointDown(desktop) {
+                margin-top: rem(20);
+            }
+        }
+    }
+
+
+
+}

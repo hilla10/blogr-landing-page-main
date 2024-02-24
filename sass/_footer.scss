@@ -1,0 +1,75 @@
+.footer {
+    background: $veryDarkBlackBlue;
+    padding: 68px 123px;
+
+    @include breakpointDown(desktop) {
+        padding: rem(68) rem(70);
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: rem(183);
+
+        @include breakpointDown(desktop) {
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        @include breakpointDown(mobile) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        ul {
+            &:nth-child(3) {
+                margin-left: 14px;
+
+                @include breakpointDown(mobile) {
+                    margin-left: 0;
+                }
+            }
+
+            &:last-child {
+                margin-left: 30px;
+
+                @include breakpointDown(mobile) {
+                    margin-left: 0;
+                }
+            }
+
+        }
+
+        li {
+            padding: 8px 0;
+
+            a {
+                color: $grayishBlue;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-thickness: 2px;
+                }
+            }
+        }
+
+        h4 {
+            padding-top: 8px;
+            color: $white;
+            padding-bottom: 26px;
+
+            @include breakpointDown(mobile) {
+                padding-top: rem(50);
+            }
+        }
+
+        @include breakpointDown(mobile) {
+            .logo {
+                margin-bottom: rem(30);
+            }
+        }
+    }
+}
